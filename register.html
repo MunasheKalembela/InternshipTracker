@@ -1,0 +1,30 @@
+<!DOCTYPE html>>
+<head>
+    <title>Register</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<main>
+<section id="register-section" class="hidden">
+    <h2>Register</h2>
+    <form id="register-form" onsubmit="handleRegister(event)">
+        <input type="text" id="new-username" placeholder="Username" required>
+        <input type="password" id="new-password" placeholder="Password" required autocomplete="off">
+        <select id="new-role" required>
+            <option value="" disabled selected>Select your role</option>
+            <option value="student">Student</option>
+            <option value="supervisor">Supervisor</option>
+            <option value="employer">Employer</option>
+        </select>
+        <button type="submit">Register</button>
+        <p>Already have an account? <a href="#" onclick="location.href='login.html'">Login here</a></p>
+    </form>
+</section>
+</main>
+
+<footer>
+<p>&copy; 2024 UZ Internship Tracker. All rights reserved.</p>
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>

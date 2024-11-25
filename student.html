@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Dashboard</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        /* Additional styles for progress bar */
+        .progress-container {
+            width: 100%;
+            background-color: #f3f3f3;
+            border-radius: 5px;
+            overflow: hidden;
+            margin-top: 10px;
+        }
+
+        .progress-bar {
+            width: 0;
+            height: 20px;
+            background-color: #4caf50;
+            text-align: center;
+            line-height: 20px;
+            color: white;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Student Dashboard</h1>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="#viewsupervisor">View Supervisor</a></li>
+                <li><a href="#viewemployer">View Employer</a></li>
+                <li><a href="#logout">Log Out</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <section>
+            <h2>Welcome, Student!</h2>
+            <p>This is your dashboard where you can log your working hours and view your ongoing work.</p>
+        </section>
+        
+        <section>
+            <h3>Your Current Work</h3>
+            <ul id="work-list">
+                <li>
+                    Project A - Status: Ongoing
+                    <div class="progress-container">
+                        <div class="progress-bar" style="width: 40%;">40%</div>
+                    </div>
+                </li>
+                <li>
+                    Project B - Status: In Progress
+                    <div class="progress-container">
+                        <div class="progress-bar" style="width: 70%;">70%</div>
+                    </div>
+                </li>
+                <li>
+                    Project C - Status: Pending Review
+                    <div class="progress-container">
+                        <div class="progress-bar" style="width: 30%;">30%</div>
+                    </div>
+                </li>
+            </ul>
+        </section>
+        
+        <section>
+            <h3>Log Your Working Hours</h3>
+            <form id="log-hours-form" onsubmit="handleLogHours(event)">
+                <label for="hours-logged">Hours Worked:</label>
+                <input type="number" id="hours-logged" placeholder="Enter hours" required>
+                
+                <label for="work-description">Work Description:</label>
+                <textarea id="work-description" placeholder="Describe the work done" required></textarea>
+                
+                <button type="submit">Log Hours</button>
+            </form>
+        </section>
+
+        <section>
+            <h3>Upload Current Work Files</h3>
+            <form id="upload-form" onsubmit="handleFileUpload(event)">
+                <label for="file-upload">Select file:</label>
+                <input type="file" id="file-upload" accept=".pdf,.doc,.docx,.ppt,.pptx,.txt" required>
+                
+                <button type="submit">Upload File</button>
+                <div class="progress-container">
+                    <div id="progress-bar" class="progress-bar">0%</div>
+                </div>
+            </form>
+        </section>
+    </main>
+    <script src="script.js"></script>
+</body>
+</html>

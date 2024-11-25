@@ -1,0 +1,51 @@
+<!DOCTYPE html>>
+<head>
+    <title>Login</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<main>
+<section id="login-section" class="hidden">
+    <h2>Login</h2>
+    <form id="login-form" onsubmit="handleLogin(event)">
+        <input type="text" id="username" placeholder="Username" required>
+        <input type="password" id="password" placeholder="Password" required autocomplete="off">
+        <select id="role" required>
+            <option value="" disabled selected>Select your role</option>
+            <option value="student">Student</option>
+            <option value="supervisor">Supervisor</option>
+            <option value="employer">Employer</option>
+        </select>
+        <button type="submit">Login</button>
+        <p>Don't have an account? <a href="#" onclick="location.href='register.html'">Register here</a></p>
+        <style>
+            .nav-list {
+    list-style: none;
+    padding: 0;
+}
+
+.nav-button {
+    margin: 0 10px;
+    padding: 10px 15px;
+    background-color: #091725;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.nav-button:hover {
+    background-color: #0056b3;
+}
+
+        </style>
+    </form>
+</section>
+
+
+<footer>
+<p>&copy; 2024 UZ Internship Tracker. All rights reserved.</p>
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>

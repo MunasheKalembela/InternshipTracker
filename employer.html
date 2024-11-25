@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Employer Dashboard</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        /* Additional styles for table */
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+        }
+        
+        th, td {
+            border: 1px solid #ddd;
+            padding: 8px;
+            text-align: left;
+        }
+        
+        th {
+            background-color: #f2f2f2;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Employer Dashboard</h1>
+        <nav>
+            <ul>
+                <li><a href="#home">Home</a></li>
+                <li><a href="#viewinterns">View Interns</a></li>
+                <li><a href="#logout">Log Out</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <section>
+            <h2>Welcome, Employer!</h2>
+            <p>Select an intern to view their logged hours and provide feedback.</p>
+        </section>
+
+        <section>
+            <h3>Select an Intern</h3>
+            <select id="intern-select" onchange="loadInternData()">
+                <option value="">-- Select an Intern --</option>
+                <!-- Intern options will be populated here -->
+            </select>
+        </section>
+
+        <section id="intern-details" class="hidden">
+            <h3>Logged Hours for Selected Intern</h3>
+            <table id="hours-table">
+                <thead>
+                    <tr>
+                        <th>Date</th>
+                        <th>Hours Worked</th>
+                        <th>Work Description</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <!-- Dynamic data will be populated here -->
+                </tbody>
+            </table>
+        </section>
+
+        <section>
+            <h3>Provide Feedback</h3>
+            <form id="feedback-form" onsubmit="handleFeedback(event)">
+                <label for="feedback-text">Feedback:</label>
+                <textarea id="feedback-text" placeholder="Enter your feedback here..." required></textarea>
+                <button type="submit">Submit Feedback</button>
+            </form>
+        </section>
+    </main>
+    <script src="script.js"></script>
+</body>
+</html>
